@@ -1,25 +1,15 @@
 package com.technosolution.model;
 
-public class MenuItem implements Comparable<MenuItem> {
+public class MenuItem {
 
-	int itemId;
 	int satisfactionLevel;
 	int timeRequiredToEat;
 
-	public MenuItem(int itemId, int satisfactionLevel, int timeToEat) {
-		// super();
-		this.itemId = itemId;
+	public MenuItem(int satisfactionLevel, int timeToEat) {
 		this.satisfactionLevel = satisfactionLevel;
 		this.timeRequiredToEat = timeToEat;
 	}
 
-	public int getItemId() {
-		return itemId;
-	}
-
-	public void setItemId(int itemId) {
-		this.itemId = itemId;
-	}
 
 	public int getSatisfactionLevel() {
 		return satisfactionLevel;
@@ -35,17 +25,6 @@ public class MenuItem implements Comparable<MenuItem> {
 
 	public void setTimeRequiredToEat(int timeToEat) {
 		this.timeRequiredToEat = timeToEat;
-	}
-
-	@Override
-	public int compareTo(MenuItem o) {
-		// TODO Auto-generated method stub
-		if (o.getTimeRequiredToEat() < this.timeRequiredToEat)
-			return 1;
-		else if (o.getTimeRequiredToEat() == this.timeRequiredToEat)
-			return 0;
-		else
-			return -1;
 	}
 
 }

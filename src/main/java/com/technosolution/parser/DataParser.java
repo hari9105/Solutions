@@ -10,7 +10,6 @@ import java.util.logging.Logger;
 
 import com.technosolution.model.Menu;
 import com.technosolution.model.MenuItem;
-import com.technosolution.util.Utility;
 
 
 public class DataParser {
@@ -35,7 +34,7 @@ public class DataParser {
 					mainMenu = new Menu(sizeOfMenu);
 					targetTimeToEat = Integer.parseInt(firstLineData[0]);
 				} else {
-					tempMenuitem = Utility.convertLineToMenuItem(line, index);
+					tempMenuitem = convertLineToMenuItem(line);
 					mainMenu.addItem(tempMenuitem);
 				}
 				index++;
@@ -60,5 +59,11 @@ public class DataParser {
 
 	public int getTargetTimeToEat() {
 		return targetTimeToEat;
+	}
+	
+	public static MenuItem convertLineToMenuItem(String line) {
+		String[] data = line.split(" ");
+		return new MenuItem(Integer.parseInt(data[0]), Integer.parseInt(data[1]));
+
 	}
 }
